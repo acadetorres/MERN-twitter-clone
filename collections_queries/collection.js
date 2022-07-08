@@ -1,4 +1,4 @@
-import {MongoClient} from "mongodb";
+import { MongoClient } from "mongodb";
 
 // const MongoClient = MongoClient();
 const url = "mongodb://localhost:27017/";
@@ -7,22 +7,34 @@ const url = "mongodb://localhost:27017/";
 let db
 let client
 
-
-const loadDB = async () => {
-  if (db) return db
+const loadClient = async () => {
+  if (client) return client
   try {
-     client = await MongoClient.connect(url)
-    db = client.db('twitter_clone')
+    client = await MongoClient.connect(url)
   } catch (err) {
     throw err
   }
+}
+
+
+const loadDB = async () => {
+  if (db) return db
+  await loadClient().then(() => {
+    try {
+      db = client.db('twitter_clone')
+      return db
+    } catch (err) {
+      throw err
+    }
+  })
+  
   return db
 }
 
 
 export class CollectionHandler {
 
-  
+
 
   async createCollections(collectionName,) {
     await loadDB().then(() => {
@@ -38,38 +50,43 @@ export class CollectionHandler {
     posts
     friends
     */
-    
+
   }
 
-  async findAll(collectionName) {
+  async findAll(collectionName,res, page, count) {
     await loadDB().then(() => {
-      db.collection(collectionName).find({}).toArray(function (err, result) {
+      const pageNumber = page ?? 0
+      const limit = count ?? 0
+      const skip = (pageNumber * limit) - limit
+      db.collection(collectionName).find({}).skip(skip).limit(limit).toArray(function (err, result) {
         if (err) throw err;
-        console.log(result);
+        res(result)
       });
     })
-    
   }
 
   async findSingle(record, collectionName, result) {
-    await loadDB().then(() => {
-      db.collection(collectionName).findOne(record, function(err, res) {
+    await loadDB().then(()=> {
+      db.collection(collectionName).findOne(record, function (err, res) {
         if (err) throw err
         result(res)
       })
     })
   }
 
-  async insertToCollection(record, collectionName) {
-    await loadDB().then(()=> {
+  async insertToCollection(record, collectionName, response) {
+    await loadDB().then(() => {
       db.collection(collectionName).insertOne(record, function (err, res) {
         if (err) throw err;
+        response(record)
         // console.log("Document" + record);
       })
     })
   }
 
   closeClient() {
-    client.close();
+    client.close()
+    client = null
+    db = null
   }
 }
