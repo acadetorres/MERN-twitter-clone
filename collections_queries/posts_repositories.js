@@ -8,5 +8,13 @@ const handler = new CollectionHandler()
 export function getAllUserPosts(userId, result) {
     handler.findAll(PostsDocument, (res) => {
 
-}, 1)
+    })
+}
+
+export function addUserPost(post) {
+    handler.insertToCollection({
+        userId : ""
+    }, PostsDocument, (result)=> {
+
+    })
 }
