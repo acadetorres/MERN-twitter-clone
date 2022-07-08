@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="32e11526-681e-4bba-940e-65c2b861fc1e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204210.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204212.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204223.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204225.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204244.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204247.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204252.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204254.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204256.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204257.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204304.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204306.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204307.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204311.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204322.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204324.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204327.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204330.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204446.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204447.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204451.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204454.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204458.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204502.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collections_queries/posts_repositories.js" beforeDir="false" afterPath="$PROJECT_DIR$/collections_queries/posts_repositories.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Bf8J9IkbIm3wdwTLyMPXqbFHry" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="32e11526-681e-4bba-940e-65c2b861fc1e" name="Changes" comment="" />
+      <created>1657285704871</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657285704871</updated>
+    </task>
+    <servers />
+  </component>
+</project>

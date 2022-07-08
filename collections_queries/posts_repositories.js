@@ -7,14 +7,16 @@ const handler = new CollectionHandler()
 
 export function getAllUserPosts(userId, result) {
     handler.findAll(PostsDocument, (res) => {
-
-    })
+        result(dataMeta(res, meta("Fetched", 200)))
+    }, {userId : userId})
 }
 
-export function addUserPost(post) {
+export function insertPost(userId, message, response) {
     handler.insertToCollection({
-        userId : ""
+        userId : userId,
+        message : message,
+        date : new Date()
     }, PostsDocument, (result)=> {
-
+        response(dataMeta(result, meta("Successfully added message", 200)))
     })
 }

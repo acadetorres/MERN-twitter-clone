@@ -53,12 +53,13 @@ export class CollectionHandler {
 
   }
 
-  async findAll(collectionName,res, page, count) {
+  async findAll(collectionName,res,record, page, count) {
     await loadDB().then(() => {
+      const query = record ?? {}
       const pageNumber = page ?? 0
       const limit = count ?? 0
       const skip = (pageNumber * limit) - limit
-      db.collection(collectionName).find({}).skip(skip).limit(limit).toArray(function (err, result) {
+      db.collection(collectionName).find(query).skip(skip).limit(limit).toArray(function (err, result) {
         if (err) throw err;
         res(result)
       });
