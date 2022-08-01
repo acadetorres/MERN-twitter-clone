@@ -36,9 +36,9 @@ export function startRoutes(app) {
     })
 
     app.get('/users/findAll', (req, res) => {
-        findAllUsers((data, meta) => {
-
-            res.status(meta.status).send({ data: data, meta: meta })
+        findAllUsers((data) => {
+            console.log(data.meta.status)
+            res.status(data.meta.status).send(data)
         })
     })
 

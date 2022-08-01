@@ -11,18 +11,22 @@ const handler = new CollectionHandler()
 
 
 export default function findAll(response) {
-    handler.findAll(UsersDocuments, ((res) => {
-        response(res, 200)
-    }))
+    handler.findAll(UsersDocuments, (res) => {
+        if (res.status) {
+            response(dataMeta({}, meta(res.message, res.status)))
+        } else {
+            response(dataMeta(res, meta("Successfully Fetched", 200)))
+        }
+    })
 }
 
 export async function registerUserDB(userName, name, password, response) {
 
-    await handler.findSingle({ userName: userName }, UsersDocuments, async function (result) {
+    await handler.findSingle({ userName: userName }, UsersDocuments, async (result) => {
         if (result == undefined) {
             console.log("Empty userName")
 
-            hashPassword(password, async function (hashedPassword) {
+            hashPassword(password, async (hashedPassword) => {
                 await handler.insertToCollection({
                     userName: userName,
                     name: name,
@@ -48,15 +52,15 @@ export async function registerUserDB(userName, name, password, response) {
     })
 }
 
-export async function userSignIn(userName, password, response) {
+export function userSignIn(userName, password, response) {
 
-    await handler.findSingle({ userName: userName }, UsersDocuments, ((res) => {
+    handler.findSingle({ userName: userName }, UsersDocuments, ((res) => {
         if (res == undefined) {
             response(dataMeta({}, meta("User does not exist", 404)))
 
         } else {
 
-            verifyPassword(password, res.password, (result)=> {
+            verifyPassword(password, res.password, (result) => {
                 if (result) {
                     response(dataMeta(res, meta("Success", 200)))
                 } else {
@@ -64,8 +68,6 @@ export async function userSignIn(userName, password, response) {
                 }
             })
         }
-
         handler.closeClient()
-
     }))
 }

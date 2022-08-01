@@ -1,3 +1,8 @@
 .history/
 
 node_modules/
+yarn.lock
+.idea/runConfigurations.xml
+.idea/vcs.xml
+.idea/workspace.xml
+yarn.lock

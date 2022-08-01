@@ -1,4 +1,5 @@
 import { MongoClient } from "mongodb";
+import { meta } from "./meta.js"
 
 // const MongoClient = MongoClient();
 const url = "mongodb://localhost:27017/";
@@ -53,17 +54,26 @@ export class CollectionHandler {
 
   }
 
-  async findAll(collectionName,res,record, page, count) {
-    await loadDB().then(() => {
-      const query = record ?? {}
-      const pageNumber = page ?? 0
-      const limit = count ?? 0
-      const skip = (pageNumber * limit) - limit
-      db.collection(collectionName).find(query).skip(skip).limit(limit).toArray(function (err, result) {
-        if (err) throw err;
-        res(result)
-      });
-    })
+  async findAll(collectionName, res, record, page, count) {
+    try {
+      await loadDB().then(() => {
+        const query = record ?? {}
+        const pageNumber = page ?? 0
+        const limit = count ?? 0
+        const skip = (pageNumber * limit) - limit
+        db.collection(collectionName).find(query).skip(skip).limit(limit).toArray(function (err, result) {
+          if (err) throw err;
+          res(result)
+        });
+      }).catch((err) => {
+        throw err
+      })
+    } catch (err) {
+      res(
+        // meta.toMeta("DB ERROR", 500)
+        meta("DB ERROR", 500)
+      )
+    }
   }
 
   async findSingle(record, collectionName, result) {
