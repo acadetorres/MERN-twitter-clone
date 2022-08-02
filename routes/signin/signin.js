@@ -7,24 +7,24 @@ const CINVALID_REQUEST = 400;
 
 const MINVALID_REQUEST = "Invalid Request!";
 
-export default async function registerUser(userName, name, password, response) {
+export default function registerUser(userName, name, password, response) {
     if (!userName || !name || !password) {
         response(dataMeta({}, meta(MINVALID_REQUEST, CINVALID_REQUEST)))
         return
     }
 
-    await registerUserDB(userName, name, password, (data) => {
+    registerUserDB(userName, name, password, (data) => {
         response(data)
     })
 
 }
 
-export async function signIn(userName, password, response) {
+export function signIn(userName, password, response) {
     if (!userName || !password) {
         response(dataMeta({}, meta(MINVALID_REQUEST, CINVALID_REQUEST)))
         return
     } 
-    await userSignIn(userName, password, (res) => {
+    userSignIn(userName, password, (res) => {
         response(res)
     })
 

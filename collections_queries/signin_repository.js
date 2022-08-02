@@ -12,11 +12,7 @@ const handler = new CollectionHandler()
 
 export default function findAll(response) {
     handler.findAll(UsersDocuments, (res) => {
-        if (res.status) {
-            response(dataMeta({}, meta(res.message, res.status)))
-        } else {
-            response(dataMeta(res, meta("Successfully Fetched", 200)))
-        }
+        response(res)  
     })
 }
 

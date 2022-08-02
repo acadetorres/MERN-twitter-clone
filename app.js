@@ -1,5 +1,6 @@
 import express from 'express';
 import { startRoutes } from './routes/routes.js';
+import helmet  from 'helmet';
 // const express = require('express')
 import registerUser, { signIn } from './routes/signin/signin.js'
 import addUserPost from './routes/users/posts/posts.js';
@@ -10,6 +11,7 @@ const port = 3000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) 
+app.use(helmet())
 
 startRoutes(app)
 

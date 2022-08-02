@@ -10,6 +10,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": ">=5.0.0-beta.1",
+    "helmet": "^5.1.1",
     "mongodb": "^4.7.0"
   },
   "type": "module"

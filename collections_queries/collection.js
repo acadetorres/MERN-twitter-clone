@@ -1,5 +1,5 @@
 import { MongoClient } from "mongodb";
-import { meta } from "./meta.js"
+import { dataMeta, meta } from "./meta.js"
 
 // const MongoClient = MongoClient();
 const url = "mongodb://localhost:27017/";
@@ -28,7 +28,7 @@ const loadDB = async () => {
       throw err
     }
   })
-  
+
   return db
 }
 
@@ -63,26 +63,35 @@ export class CollectionHandler {
         const skip = (pageNumber * limit) - limit
         db.collection(collectionName).find(query).skip(skip).limit(limit).toArray(function (err, result) {
           if (err) throw err;
-          res(result)
+          res(dataMeta(result, meta("Succesful", 200)))
         });
       }).catch((err) => {
         throw err
       })
     } catch (err) {
+      console.log(err.message)
       res(
         // meta.toMeta("DB ERROR", 500)
-        meta("DB ERROR", 500)
+        dataMeta({}, meta("DB ERROR", 500))
       )
     }
   }
 
   async findSingle(record, collectionName, result) {
-    await loadDB().then(()=> {
-      db.collection(collectionName).findOne(record, function (err, res) {
-        if (err) throw err
-        result(res)
+    try {
+      await loadDB().then(() => {
+        db.collection(collectionName).findOne(record, function (err, res) {
+          if (err) throw err
+          result(res)
+        })
       })
-    })
+    } catch (err) {
+      console.log(err.message)
+      res(
+        // meta.toMeta("DB ERROR", 500)
+        meta("DB ERROR", 500)
+      )
+    }
   }
 
   async insertToCollection(record, collectionName, response) {
