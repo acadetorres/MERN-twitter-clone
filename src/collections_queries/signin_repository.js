@@ -16,9 +16,14 @@ export default function findAll(response) {
     })
 }
 
-export async function registerUserDB(userName, name, password, response) {
+export async function registerUserDB(
+    userName, name, password, response) {
 
     await handler.findSingle({ userName: userName }, UsersDocuments, async (result) => {
+        if (result.meta.status != 200) {
+            response(dataMeta({}, result.meta.message))
+            return
+        }
         if (result == undefined) {
             console.log("Empty userName")
 

@@ -1,7 +1,7 @@
 import { getAllUserPosts } from '../collections_queries/posts_repositories.js'
 import registerUser, { signIn } from './signin/signin.js'
 import addUserPost from './users/posts/posts.js'
-import findAllUsers from './users/users.js'
+import findAllUsers from './users/users_viewmodel'
 
 export function startRoutes(app) {
 

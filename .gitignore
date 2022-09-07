@@ -6,3 +6,6 @@ yarn.lock
 .idea/vcs.xml
 .idea/workspace.xml
 yarn.lock
+yarn.lock
+bin/
+.idea/

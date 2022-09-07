@@ -1,12 +1,12 @@
-import { MongoClient } from "mongodb";
+import { Db, MongoClient } from "mongodb";
 import { dataMeta, meta } from "./meta.js"
 
 // const MongoClient = MongoClient();
 const url = "mongodb://localhost:27017/";
 
 
-let db
-let client
+let db : Db | any
+let client : MongoClient | any
 
 const loadClient = async () => {
   if (client) return client
@@ -32,12 +32,14 @@ const loadDB = async () => {
   return db
 }
 
+// const promiseReject()
+
 
 export class CollectionHandler {
 
 
 
-  async createCollections(collectionName,) {
+  async createCollections(collectionName) {
     await loadDB().then(() => {
       db.createCollection(collectionName, function (err, res) {
         if (err) throw err;
@@ -54,7 +56,9 @@ export class CollectionHandler {
 
   }
 
+   
   async findAll(collectionName, res, record, page, count) {
+
     try {
       await loadDB().then(() => {
         const query = record ?? {}
@@ -63,7 +67,7 @@ export class CollectionHandler {
         const skip = (pageNumber * limit) - limit
         db.collection(collectionName).find(query).skip(skip).limit(limit).toArray(function (err, result) {
           if (err) throw err;
-          res(dataMeta(result, meta("Succesful", 200)))
+          res(dataMeta(result, meta("Successful", 200)))
         });
       }).catch((err) => {
         throw err
@@ -87,7 +91,7 @@ export class CollectionHandler {
       })
     } catch (err) {
       console.log(err.message)
-      res(
+      result(
         // meta.toMeta("DB ERROR", 500)
         meta("DB ERROR", 500)
       )
@@ -95,13 +99,18 @@ export class CollectionHandler {
   }
 
   async insertToCollection(record, collectionName, response) {
-    await loadDB().then(() => {
-      db.collection(collectionName).insertOne(record, function (err, res) {
-        if (err) throw err;
-        response(record)
-        // console.log("Document" + record);
+    try {
+      await loadDB().then(() => {
+        db.collection(collectionName).insertOne(record, function (err, res) {
+          if (err) throw err;
+          response(dataMeta(record), meta("Successful insert", 200))
+          // console.log("Document" + record);
+        })
       })
-    })
+    } catch (err) {
+      console.log("err" + err.message)
+      response(dataMeta({},meta("Failed insert", 200)))
+    }
   }
 
   closeClient() {

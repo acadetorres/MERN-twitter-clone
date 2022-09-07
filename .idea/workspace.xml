@@ -2,32 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32e11526-681e-4bba-940e-65c2b861fc1e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204210.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204212.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204223.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204225.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204244.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204247.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204252.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204254.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204256.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204257.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204304.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204306.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204307.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204311.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204322.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204324.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204327.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204330.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204446.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204447.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204451.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204454.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204458.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.history/collections_queries/posts_repositories_20220708204502.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections_queries/posts_repositories.js" beforeDir="false" afterPath="$PROJECT_DIR$/collections_queries/posts_repositories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.history/.gitignore_20220708202325" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.history/.gitignore_20220708202326" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.history/.gitignore_20220708202335" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collections_queries/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/collections_queries/collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collections_queries/signin_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/collections_queries/signin_repository.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

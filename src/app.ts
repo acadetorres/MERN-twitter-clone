@@ -1,10 +1,12 @@
+// import { startRoutes } from './src/routes/routes.ts';
 import express from 'express';
-import { startRoutes } from './routes/routes.js';
+// import { startRoutes } from 'startRoutes';
 import helmet  from 'helmet';
+import { startRoutes } from './routes/routes';
 // const express = require('express')
-import registerUser, { signIn } from './routes/signin/signin.js'
-import addUserPost from './routes/users/posts/posts.js';
-import findAllUsers from './routes/users/users.js';
+// import registerUser, { signIn } from './routes/signin/signin.js'
+// import addUserPost from './routes/users/posts/posts.js';
+// import findAllUsers from './routes/users/users.js';
 
 export const app = express()
 const port = 3000
